@@ -107,3 +107,76 @@ cout << book[i] << " ";
 
 return 0;
 }
+
+#4 Smart Library
+//Create a program which allows user to add, display,search or exit the program. 
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+int book[10];
+int n = 0
+int choice;
+int searchID;
+
+do{
+cout<<"\n\n========== SMART LIBRARY ===========";
+cout<<"\n1.Add Book";
+cout<<"\n2. Display Book";
+cout<<"\n3. Search Book";
+cout<<"\n4.Exit";
+cout<<"\nEnter your choice: ";
+
+if (choice ==1)
+{
+cout<<"Enter BookID: ";
+cin>>book[n];
+n++;
+cout<<"Book Added!";
+}
+
+else if (choice == 2);
+{
+cout<<"\nBooks in library:\n";
+for(int i = 0; i<n;i++)
+{
+cout<<book[i]<<endl;
+}
+}
+
+else if(choice==3)
+{
+cout<<"Enter BookID to search: ";
+cin>>searchID;
+bool found = false;
+for (int i = o;i<n;i++)
+{
+if (book[i]== searchID)
+{
+found = true;
+}
+}
+if (found)
+{
+cout<<"Book Found!";
+}
+else
+{
+cout<<"Book not found";
+}
+{
+{
+else if(choice == 4)
+{
+cout<<"Thank you";
+}
+}
+else
+{
+cout<<"Invalid choice!";
+}
+}
+while (choice != 4);
+return 0;
+}
+
