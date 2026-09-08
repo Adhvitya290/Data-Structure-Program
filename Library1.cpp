@@ -74,3 +74,36 @@ return 0;}
 cout<<"Book not found";
 return 0;
 }
+
+#3 Bubble Sorting
+//Write a C++ program where the user gives 5 BookID and sort it in ascending order
+#include <iostream>
+using namespace std;
+
+int main() {
+int book[5];
+
+cout << "Enter 5 Book IDs:\n";
+
+for (int i = 0; i < 5; i++) {
+        cin >> book[i];}
+
+// Sorting using Bubble Sort
+for (int i = 0; i < 4; i++) {
+for (int j = 0; j < 4 - i; j++) {
+if (book[j] > book[j + 1]) {
+int temp = book[j];
+book[j] = book[j + 1];
+book[j + 1] = temp;
+}
+}
+}
+
+cout << "\nBooks after Sorting:\n";
+
+for (int i = 0; i < 5; i++) {
+cout << book[i] << " ";
+}
+
+return 0;
+}
