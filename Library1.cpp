@@ -180,3 +180,81 @@ while (choice != 4);
 return 0;
 }
 
+//to store roll numbers of 5 students in an array,and search for a given roll number. display "student found"
+//if student details exist, else display "student not found"
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    int rollno1,rollno2,rollno3,rollno4,rollno5;
+    string name1,name2,name3,name4,name5;
+
+//Roll no1
+cout<<"Enter Roll No: ";
+cin>> rollno1;
+
+cin.ignore();
+cout<<"Enter your name: ";
+getline(cin,name1);
+
+//Roll no2
+cout<<"Enter Roll No: ";
+cin>> rollno2;
+
+cin.ignore();
+cout<<"Enter your name: ";
+getline(cin,name2);
+
+//Roll no3
+cout<<"Enter Roll No: ";
+cin>> rollno3;
+
+cin.ignore();
+cout<<"Enter your name: ";
+getline(cin,name3);
+
+//Roll no4
+cout<<"Enter Roll No: ";
+cin>> rollno4;
+
+cin.ignore();
+cout<<"Enter your name: ";
+getline(cin,name4);
+
+//Roll no5
+cout<<"Enter Roll No: ";
+cin>> rollno5;
+
+cin.ignore();
+cout<<"Enter your name: ";
+getline(cin,name5);
+
+//User prints a students info
+int rollno[5];
+rollno[0] = rollno1;
+rollno[1] = rollno2;
+rollno[2] = rollno3;
+rollno[3] = rollno4;
+rollno[4] = rollno5;
+int searchID;
+
+cout<<"\nEnter Roll number to search: ";
+cin>>searchID;
+
+bool found = false;
+
+for (int i = 0; i < 5; i++) {
+if (rollno[i] == searchID) {
+        cout << "Student found";
+        found = true;
+        break;
+    }
+}
+
+if (!found) {
+    cout << "Student not found";} 
+return 0;
+}
+
+//To store marks of five students in an array and arrange the makrs in descending order to display the students from 
+//hihest to lowest marks
