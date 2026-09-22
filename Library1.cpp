@@ -258,3 +258,34 @@ return 0;
 
 //To store marks of five students in an array and arrange the makrs in descending order to display the students from 
 //hihest to lowest marks
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int marks[5];
+
+    for(int i = 0; i < 5; i++){
+        cin >> marks[i];
+    }
+
+    // Arrange in descending order
+    for(int i = 0; i < 5; i++){
+        for(int j = i + 1; j < 5; j++){
+            if (marks[i] < marks[j]){
+                int temp = marks[i];
+                marks[i] = marks[j];
+                marks[j] = temp;
+            }
+        }
+    }
+
+    // display
+    cout << "\nMarks of Students from Highest to lowest:\n";
+
+    for(int i = 0; i < 5; i++){
+        cout << marks[i] << endl;
+    }
+
+    return 0;
+}
