@@ -289,3 +289,74 @@ int main() {
 
     return 0;
 }
+
+
+//Create a Smart Student record
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+ int rollno[10];
+ int n = 0;
+ int choice;
+ int searchroll;
+
+do{
+cout<<"\n\n========== SMART LIBRARY ===========";
+cout<<"\n1.Add Roll Number";
+cout<<"\n2. Display Roll Number";
+cout<<"\n3. Search Roll Number";
+cout<<"\n4.Exit";
+cout<<"\nEnter your choice: ";
+cin>>choice;
+
+if (choice ==1)
+{
+cout<<"Enter Roll : ";
+cin>>rollno[n];
+n++;
+cout<<"Roll Number!";
+}
+
+else if (choice == 2)
+{
+cout<<"\nRoll Number in Records:\n";
+for(int i = 0; i<n;i++)
+{
+cout<<rollno[i]<<endl;
+}
+}
+
+else if(choice==3)
+{
+cout<<"Enter Roll Number to search: ";
+cin>>searchroll;
+bool found = false;
+for (int i = 0;i<n;i++)
+{
+if (rollno[i]== searchroll)
+{
+found = true;
+}
+}
+if (found)
+{
+cout<<"Roll Number Found!";
+}
+else
+{
+cout<<"Roll Number not found";
+}
+}
+else if(choice == 4)
+{
+cout<<"Thank you";
+}
+else
+{
+cout<<"Invalid choice!";
+}
+}
+while (choice != 4);
+return 0;
+}
