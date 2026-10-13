@@ -1,4 +1,4 @@
-//Create a Smart Student record
+//Create a Smart Customer record
 #include<iostream>
 #include<string>
 using namespace std;
