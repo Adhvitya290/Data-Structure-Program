@@ -1,0 +1,143 @@
+include <iostream>
+#include <string>
+using namespace std;
+
+struct Product {
+int id;
+string name;
+string category;
+float price;
+int quantity;};
+
+Product products[10];
+int count = 0;
+
+// Add Product
+void addProduct(){
+if (count == 10) {
+cout << "Catalog is full!";
+return;}
+
+cout << "Enter Product ID: ";
+cin >> products[count].id;
+
+cout << "Enter Product Name: ";
+cin.ignore();
+getline(cin, products[count].name);
+
+cout << "Enter Category: ";
+getline(cin, products[count].category);
+
+cout << "Enter Price: ";
+cin >> products[count].price;
+
+cout << "Enter Quantity: ";
+cin >> products[count].quantity;
+count++;
+
+cout << "Product added successfully!\n";}
+
+// Search Product
+void searchProduct(){
+int id;
+cout << "Enter Product ID: ";
+cin >> id;
+
+for (int i = 0; i < count; i++) {
+if (products[i].id == id) {
+cout << "\nProduct Found!";
+cout << "\nName: " << products[i].name;
+cout << "\nCategory: " << products[i].category;
+cout << "\nPrice: " << products[i].price;
+cout << "\nQuantity: " << products[i].quantity;
+return;}
+}
+
+cout << "Product not found!\n";}
+
+// Update Product
+void updateProduct(){
+int id;
+cout << "Enter Product ID to update: ";
+cin >> id;
+
+for (int i = 0; i < count; i++){
+if (products[i].id == id){
+
+cout << "Enter New Name: ";
+cin.ignore();
+etline(cin, products[i].name);
+
+cout << "Enter New Category: ";
+getline(cin, products[i].category);
+
+cout << "Enter New Price: ";
+cin >> products[i].price;
+
+cout << "Enter New Quantity: ";
+cin >> products[i].quantity;
+
+cout << "Product updated successfully!\n";
+return;}
+}
+
+cout << "Product not found!\n";}
+
+// Display All Products
+void displayProducts(){
+if (count == 0){
+cout << "No products available!\n";
+return;}
+
+for (int i = 0; i < count; i++) {
+cout << "\nProduct ID: " << products[i].id;
+cout << "\nName: " << products[i].name;
+cout << "\nCategory: " << products[i].category;
+cout << "\nPrice: " << products[i].price;
+cout << "\nQuantity: " << products[i].quantity;
+cout << "\n-------------------\n";}
+}
+
+// Main Function
+int main() {
+int choice;
+
+do{
+cout << "\n===== PRODUCT CATALOG =====";
+cout << "\n1. Add Product";
+cout << "\n2. Update Product";
+cout << "\n3. Display Products";
+cout << "\n4. Search Product";
+cout << "\n5. Exit";
+
+cout << "\nEnter Choice: ";
+cin >> choice;
+
+switch (choice) {
+case 1:
+addProduct();
+break;
+
+case 2:
+updateProduct();
+break;
+
+case 3:
+displayProducts();
+break;
+
+case 4:
+searchProduct();
+break;
+
+case 5:
+cout << "Exiting Program...";
+break;
+
+default:
+cout << "Invalid Choice!";}
+
+} while (choice != 5);
+
+return 0;
+}
